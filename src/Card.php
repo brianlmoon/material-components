@@ -6,13 +6,15 @@ class Card extends \Moonspot\Component\ComponentAbstract {
 
     // settings
     protected string                $title            = '';
-    protected string                $color            = 'white';
-    protected string                $background_color = 'black';
+    protected string                $color            = 'black';
+    protected string                $background_color = 'white';
     protected string                $image            = '';
     protected string|array|\Closure $content          = '';
     protected array                 $actions          = [];
 
     public function setDefaults() {
+        $this->class .= " card {$this->background_color}";
+
         foreach ($this->actions as $action) {
             if (!count($action) === 2 || empty($action['href']) || empty($action['text'])) {
                 throw new \LogicException("Invalid action", 1);
@@ -22,7 +24,7 @@ class Card extends \Moonspot\Component\ComponentAbstract {
 
     public function markup() {
         ?>
-        <div class="card <?=$this->background_color?>">
+        <div <?=$this->attributes()?>>
             <?php if ($this->image) { ?>
                 <div class="card-image">
                     <img src="<?=htmlspecialchars($this->image)?>" />

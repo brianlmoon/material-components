@@ -5,6 +5,7 @@ namespace Moonspot\MaterialComponents;
 class TextArea extends \Moonspot\Component\ComponentAbstract {
 
     // attributes
+    public string   $name        = '';
     public bool     $disabled    = false;
     public bool     $readonly    = false;
     public int|null $minlength   = null;
@@ -17,6 +18,13 @@ class TextArea extends \Moonspot\Component\ComponentAbstract {
     protected string $label         = '';
     protected string $wrapper_class = '';
     protected string $helper_text   = '';
+
+    public function setDefaults() {
+        $this->class .= " materialize-textarea";
+        if (empty($this->name)) {
+            $this->name = $this->id;
+        }
+    }
 
     public function markup() {
         ?>

@@ -4,6 +4,9 @@ namespace Moonspot\MaterialComponents;
 
 class Button extends \Moonspot\Component\ComponentAbstract {
 
+    // attributes
+    public $type = '';
+
     // settings
     protected string    $text     = '';
     protected string    $color    = '';

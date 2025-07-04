@@ -5,6 +5,7 @@ namespace Moonspot\MaterialComponents;
 class Select extends \Moonspot\Component\ComponentAbstract {
 
     // attributes
+    public string   $name        = '';
     public bool     $disabled    = false;
     public bool     $readonly    = false;
     public bool     $required    = false;
@@ -16,10 +17,16 @@ class Select extends \Moonspot\Component\ComponentAbstract {
     protected string $helper_text   = '';
     protected array  $options       = [];
 
+    public function setDefaults() {
+        if (empty($this->name)) {
+            $this->name = $this->id;
+        }
+    }
+
     public function markup() {
         ?>
         <div class="input-field <?=htmlspecialchars($this->wrapper_class)?>">
-            <select>
+            <select <?=$this->attributes()?>>
                 <?php foreach ($this->options as $option) { ?>
                     <option value="<?=htmlspecialchars($option['value'])?>" <?php if ($option['value'] == $this->value) { ?>selected<?php } ?>><?=htmlspecialchars($option['text'])?></option>
                 <?php } ?>
@@ -32,4 +39,14 @@ class Select extends \Moonspot\Component\ComponentAbstract {
         <?php
     }
 
+    public static function script() {
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+        </script>
+        <?php
+    }
 }
