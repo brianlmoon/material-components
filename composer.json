@@ -24,7 +24,7 @@
     }
   },
   "require": {
-    "php": "^8.1",
+    "php": "^8.2",
     "dealnews/test-helpers": "^2.1",
     "moonspot/component": "^1.0.2"
   },
