@@ -2,22 +2,66 @@
 
 namespace Moonspot\MaterialComponents;
 
-class Button extends \Moonspot\Component\ComponentAbstract {
+use Moonspot\Component\ComponentAbstract;
+
+/**
+ * Materialize button component for rendering `<button>` or `<a>` elements.
+ */
+class Button extends ComponentAbstract {
 
     // attributes
-    public $type = '';
+    /**
+     * Button type attribute applied when rendering a `<button>`.
+     *
+     * @var string
+     */
+    public string $type = '';
 
     // settings
-    protected string    $text     = '';
-    protected string    $color    = '';
-    protected Icon|null $icon     = null;
-    protected bool      $flat     = false;
-    protected string    $size     = '';
-    protected bool      $disabled = false;
-    protected string    $href     = '';
-    protected bool      $floating = false;
+    /**
+     * Visible button label.
+     */
+    protected string $text = '';
 
-    public function setDefaults() {
+    /**
+     * Materialize color class (e.g. `blue`).
+     */
+    protected string $color = '';
+
+    /**
+     * Optional icon rendered before the label.
+     */
+    protected Icon|null $icon = null;
+
+    /**
+     * Adds the `btn-flat` class when true.
+     */
+    protected bool $flat = false;
+
+    /**
+     * Size suffix appended as `btn-{size}`.
+     */
+    protected string $size = '';
+
+    /**
+     * Indicates whether the button is disabled.
+     */
+    protected bool $disabled = false;
+
+    /**
+     * When provided, renders the component as an `<a>` tag.
+     */
+    protected string $href = '';
+
+    /**
+     * Adds the `btn-floating` class when true.
+     */
+    protected bool $floating = false;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefaults(): void {
         $this->class = "btn waves-effect waves-light {$this->color} {$this->class}";
         if ($this->flat) {
             $this->class .= " btn-flat";
@@ -30,7 +74,10 @@ class Button extends \Moonspot\Component\ComponentAbstract {
         }
     }
 
-    public function markup() {
+    /**
+     * {@inheritDoc}
+     */
+    public function markup(): void {
         if ($this->href) {
             $tag = 'a';
         } else {

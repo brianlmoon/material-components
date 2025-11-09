@@ -2,34 +2,111 @@
 
 namespace Moonspot\MaterialComponents;
 
-class TextInput extends \Moonspot\Component\ComponentAbstract {
+use Moonspot\Component\ComponentAbstract;
+
+/**
+ * Materialize single-line text input component.
+ */
+class TextInput extends ComponentAbstract {
 
     // attributes
-    public string   $name        = '';
-    public string   $type        = 'text';
-    public string   $value       = '';
-    public bool     $disabled    = false;
-    public bool     $readonly    = false;
-    public bool     $required    = false;
-    public int|null $minlength   = null;
-    public int|null $maxlength   = null;
-    public int|null $min         = null;
-    public int|null $max         = null;
-    public string   $pattern     = '';
-    public string   $placeholder = '';
+    /**
+     * Input name attribute (defaults to id).
+     */
+    public string $name = '';
+
+    /**
+     * Input type attribute (default `text`).
+     */
+    public string $type = 'text';
+
+    /**
+     * Default input value.
+     */
+    public string $value = '';
+
+    /**
+     * Disables the field when true.
+     */
+    public bool $disabled = false;
+
+    /**
+     * Applies `readonly`.
+     */
+    public bool $readonly = false;
+
+    /**
+     * Marks the field as required.
+     */
+    public bool $required = false;
+
+    /**
+     * Minimum length of the input value.
+     *
+     * @var int|null
+     */
+    public int|null $minlength = null;
+
+    /**
+     * Maximum length of the input value.
+     *
+     * @var int|null
+     */
+    public int|null $maxlength = null;
+
+    /**
+     * Minimum numeric value constraint.
+     *
+     * @var int|null
+     */
+    public int|null $min = null;
+
+    /**
+     * Maximum numeric value constraint.
+     *
+     * @var int|null
+     */
+    public int|null $max = null;
+
+    /**
+     * Regex pattern applied to the input.
+     */
+    public string $pattern = '';
+
+    /**
+     * Placeholder text shown when empty.
+     */
+    public string $placeholder = '';
 
     // settings
-    protected string $label         = '';
-    protected string $wrapper_class = '';
-    protected string $helper_text   = '';
+    /**
+     * Floating label text.
+     */
+    protected string $label = '';
 
-    public function setDefaults() {
+    /**
+     * Wrapper class applied to `.input-field`.
+     */
+    protected string $wrapper_class = '';
+
+    /**
+     * Helper text rendered below the input.
+     */
+    protected string $helper_text = '';
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefaults(): void {
         if (empty($this->name)) {
             $this->name = $this->id;
         }
     }
 
-    public function markup() {
+    /**
+     * {@inheritDoc}
+     */
+    public function markup(): void {
         ?>
         <div class="input-field <?=htmlspecialchars($this->wrapper_class)?>">
           <input <?=$this->attributes()?> />

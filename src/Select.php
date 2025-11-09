@@ -2,28 +2,75 @@
 
 namespace Moonspot\MaterialComponents;
 
-class Select extends \Moonspot\Component\ComponentAbstract {
+use Moonspot\Component\ComponentAbstract;
+
+/**
+ * Materialize select component with helper text support.
+ */
+class Select extends ComponentAbstract {
 
     // attributes
-    public string   $name        = '';
-    public bool     $disabled    = false;
-    public bool     $readonly    = false;
-    public bool     $required    = false;
+    /**
+     * Select name attribute (defaults to component id).
+     */
+    public string $name = '';
+
+    /**
+     * Disables the select when true.
+     */
+    public bool $disabled = false;
+
+    /**
+     * Applies the `readonly` attribute.
+     */
+    public bool $readonly = false;
+
+    /**
+     * Marks the select as required.
+     */
+    public bool $required = false;
 
     // settings
-    protected string $value         = '';
-    protected string $label         = '';
-    protected string $wrapper_class = '';
-    protected string $helper_text   = '';
-    protected array  $options       = [];
+    /**
+     * Currently selected value.
+     */
+    protected string $value = '';
 
-    public function setDefaults() {
+    /**
+     * Floating label text.
+     */
+    protected string $label = '';
+
+    /**
+     * Wrapper class applied to the `.input-field`.
+     */
+    protected string $wrapper_class = '';
+
+    /**
+     * Helper text rendered beneath the select.
+     */
+    protected string $helper_text = '';
+
+    /**
+     * Options definition array, each containing `value` and `text`.
+     *
+     * @var array<int, array{value:string,text:string}>
+     */
+    protected array $options = [];
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefaults(): void {
         if (empty($this->name)) {
             $this->name = $this->id;
         }
     }
 
-    public function markup() {
+    /**
+     * {@inheritDoc}
+     */
+    public function markup(): void {
         ?>
         <div class="input-field <?=htmlspecialchars($this->wrapper_class)?>">
             <select <?=$this->attributes()?>>
@@ -39,6 +86,9 @@ class Select extends \Moonspot\Component\ComponentAbstract {
         <?php
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function script() {
         ?>
         <script>
