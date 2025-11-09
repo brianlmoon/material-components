@@ -15,7 +15,7 @@ class Pagination extends ComponentAbstract {
     /**
      * Tag used for the outer container (defaults to nav).
      */
-    public string $container_tag = 'nav';
+    protected string $container_tag = 'nav';
 
     /**
      * WAI-ARIA role applied to the outer container.
