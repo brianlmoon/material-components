@@ -128,7 +128,7 @@ class FloatingActionButton extends ComponentAbstract {
         $actions = $this->normalizeActions($this->actions);
 
         ?>
-        <<?=htmlspecialchars($tag)?> <?=$this->attributes()?><?php if ($this->aria_label) { ?> aria-label="<?=htmlspecialchars($this->aria_label)?>"<?php } ?>>
+        <<?=htmlspecialchars($tag)?> <?=$this->attributes()?>>
             <?=$this->renderMainButton()?>
             <?php if (!empty($actions)) { ?>
                 <ul>
