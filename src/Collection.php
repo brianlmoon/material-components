@@ -13,7 +13,7 @@ class Collection extends ComponentAbstract {
     /**
      * HTML tag used for the outer collection wrapper.
      */
-    public string $tag = 'ul';
+    protected string $tag = 'ul';
 
     /**
      * ARIA role applied to the outer wrapper.
