@@ -79,7 +79,7 @@ class Tabs extends ComponentAbstract {
      * {@inheritDoc}
      */
     public function markup(): void {
-        $tabs = $this->normalizeItems($this->items);
+        $tabs     = $this->normalizeItems($this->items);
         $sections = $this->normalizeContentSections($this->content_sections);
 
         if (empty($tabs)) {
@@ -105,7 +105,7 @@ class Tabs extends ComponentAbstract {
                     } else {
                         echo $section['content'];
                     }
-                    ?>
+                ?>
                 </div>
             <?php } ?>
         </<?=htmlspecialchars($container_tag)?>>
@@ -121,7 +121,7 @@ class Tabs extends ComponentAbstract {
      */
     protected function renderTabAnchor(array $tab): string {
         $classes = trim($tab['anchor_class'] . ($tab['disabled'] ? ' disabled' : ''));
-        $attrs = [
+        $attrs   = [
             'href'  => $tab['href'],
             'class' => $classes,
         ];
@@ -165,27 +165,27 @@ class Tabs extends ComponentAbstract {
 
         foreach ($items as $key => $item) {
             if (is_array($item)) {
-                $label        = (string)($item['label'] ?? $item['text'] ?? '');
-                $href         = (string)($item['href'] ?? ($item['target_id'] ?? ''));
-                $class        = trim((string)($item['class'] ?? ''));
-                $anchor_class = trim((string)($item['anchor_class'] ?? ''));
-                $active       = (bool)($item['active'] ?? false);
-                $disabled     = (bool)($item['disabled'] ?? false);
-                $icon         = (string)($item['icon'] ?? '');
-                $icon_position= trim((string)($item['icon_position'] ?? ''));
-                $target       = (string)($item['target'] ?? '');
-                $target_id    = (string)($item['id'] ?? '');
+                $label         = (string)($item['label'] ?? $item['text'] ?? '');
+                $href          = (string)($item['href'] ?? ($item['target_id'] ?? ''));
+                $class         = trim((string)($item['class'] ?? ''));
+                $anchor_class  = trim((string)($item['anchor_class'] ?? ''));
+                $active        = (bool)($item['active'] ?? false);
+                $disabled      = (bool)($item['disabled'] ?? false);
+                $icon          = (string)($item['icon'] ?? '');
+                $icon_position = trim((string)($item['icon_position'] ?? ''));
+                $target        = (string)($item['target'] ?? '');
+                $target_id     = (string)($item['id'] ?? '');
             } else {
-                $label        = (string)$item;
-                $href         = is_string($key) ? (string)$key : '';
-                $class        = '';
-                $anchor_class = '';
-                $active       = false;
-                $disabled     = false;
-                $icon         = '';
-                $icon_position= '';
-                $target       = '';
-                $target_id    = '';
+                $label         = (string)$item;
+                $href          = is_string($key) ? (string)$key : '';
+                $class         = '';
+                $anchor_class  = '';
+                $active        = false;
+                $disabled      = false;
+                $icon          = '';
+                $icon_position = '';
+                $target        = '';
+                $target_id     = '';
             }
 
             if ($label === '') {
@@ -205,14 +205,14 @@ class Tabs extends ComponentAbstract {
             }
 
             $normalized[] = [
-                'label'        => $label,
-                'href'         => $href,
-                'class'        => $class,
-                'anchor_class' => $anchor_class,
-                'disabled'     => $disabled,
-                'icon'         => $icon,
-                'icon_position'=> $icon_position,
-                'target'       => $target,
+                'label'         => $label,
+                'href'          => $href,
+                'class'         => $class,
+                'anchor_class'  => $anchor_class,
+                'disabled'      => $disabled,
+                'icon'          => $icon,
+                'icon_position' => $icon_position,
+                'target'        => $target,
             ];
         }
 

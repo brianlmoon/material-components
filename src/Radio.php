@@ -126,21 +126,21 @@ class Radio extends ComponentAbstract {
 
         foreach ($this->options as $key => $option) {
             if (is_array($option)) {
-                $label = (string)($option['label'] ?? ($option['text'] ?? ''));
-                $value = array_key_exists('value', $option) ? (string)$option['value'] : (string)($label !== '' ? $label : $key);
+                $label       = (string)($option['label'] ?? ($option['text'] ?? ''));
+                $value       = array_key_exists('value', $option) ? (string)$option['value'] : (string)($label !== '' ? $label : $key);
                 $helper_text = (string)($option['helper_text'] ?? '');
-                $class = (string)($option['class'] ?? '');
-                $id = (string)($option['id'] ?? '');
-                $disabled = (bool)($option['disabled'] ?? false);
-                $checked = (bool)($option['checked'] ?? false);
+                $class       = (string)($option['class'] ?? '');
+                $id          = (string)($option['id'] ?? '');
+                $disabled    = (bool)($option['disabled'] ?? false);
+                $checked     = (bool)($option['checked'] ?? false);
             } else {
-                $label = (string)$option;
-                $value = is_string($key) ? (string)$key : $label;
+                $label       = (string)$option;
+                $value       = is_string($key) ? (string)$key : $label;
                 $helper_text = '';
-                $class = '';
-                $id = '';
-                $disabled = false;
-                $checked = false;
+                $class       = '';
+                $id          = '';
+                $disabled    = false;
+                $checked     = false;
             }
 
             if ($label === '') {

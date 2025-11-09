@@ -106,7 +106,7 @@ class Pagination extends ComponentAbstract {
         }
 
         if ($item['disabled']) {
-            $attributes['tabindex'] = -1;
+            $attributes['tabindex']      = -1;
             $attributes['aria-disabled'] = 'true';
         }
 

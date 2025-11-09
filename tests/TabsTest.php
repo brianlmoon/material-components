@@ -43,11 +43,11 @@ class TabsTest extends TestCase {
                 'tab_item_class'  => 'col s3',
                 'items'           => [
                     [
-                        'label'        => 'Overview',
-                        'href'         => '#overview',
-                        'icon'         => 'insert_chart',
-                        'icon_position'=> 'left',
-                        'active'       => true,
+                        'label'         => 'Overview',
+                        'href'          => '#overview',
+                        'icon'          => 'insert_chart',
+                        'icon_position' => 'left',
+                        'active'        => true,
                     ],
                     [
                         'label' => 'Usage',

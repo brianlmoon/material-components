@@ -124,7 +124,7 @@ class FloatingActionButton extends ComponentAbstract {
      * {@inheritDoc}
      */
     public function markup(): void {
-        $tag = $this->tag ?: 'div';
+        $tag     = $this->tag ?: 'div';
         $actions = $this->normalizeActions($this->actions);
 
         ?>
@@ -272,7 +272,7 @@ class FloatingActionButton extends ComponentAbstract {
 
         foreach ($actions as $key => $action) {
             if (is_array($action)) {
-                $tag               = $action['tag'] ?? 'a';
+                $tag               = $action['tag']  ?? 'a';
                 $href              = $action['href'] ?? '#!';
                 $class             = trim((string)($action['class'] ?? ''));
                 $color_class       = trim((string)($action['color_class'] ?? ''));

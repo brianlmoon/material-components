@@ -122,7 +122,7 @@ class Footer extends ComponentAbstract {
                                 } else {
                                     echo htmlspecialchars((string)$section['content']);
                                 }
-                                ?>
+                            ?>
                             </p>
                         <?php } ?>
                         <?php if (!empty($section['links'])) { ?>
@@ -177,19 +177,19 @@ class Footer extends ComponentAbstract {
                 continue;
             }
 
-            $links = $this->normalizeLinks($section['links'] ?? []);
+            $links   = $this->normalizeLinks($section['links'] ?? []);
             $content = $section['content'] ?? null;
             if ($content !== null && !is_callable($content)) {
                 $content = (string)$content;
             }
 
             $normalized[] = [
-                'title'        => (string)($section['title'] ?? ''),
-                'title_class'  => trim((string)($section['title_class'] ?? '')),
-                'content'      => $content,
-                'content_class'=> trim((string)($section['content_class'] ?? '')),
-                'links'        => $links,
-                'column_class' => trim((string)($section['column_class'] ?? 'col s12')),
+                'title'         => (string)($section['title'] ?? ''),
+                'title_class'   => trim((string)($section['title_class'] ?? '')),
+                'content'       => $content,
+                'content_class' => trim((string)($section['content_class'] ?? '')),
+                'links'         => $links,
+                'column_class'  => trim((string)($section['column_class'] ?? 'col s12')),
             ];
         }
 

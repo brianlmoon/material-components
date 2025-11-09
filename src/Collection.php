@@ -207,36 +207,36 @@ class Collection extends ComponentAbstract {
                 } elseif (!empty($item['divider'])) {
                     $type = 'divider';
                 }
-                $label          = (string)($item['label'] ?? $item['text'] ?? '');
-                $href           = (string)($item['href'] ?? '#!');
-                $class          = trim((string)($item['class'] ?? ''));
-                $active         = (bool)($item['active'] ?? false);
-                $disabled       = (bool)($item['disabled'] ?? false);
-                $avatar         = (string)($item['avatar'] ?? '');
-                $avatar_alt     = (string)($item['avatar_alt'] ?? '');
-                $body           = (string)($item['body'] ?? '');
-                $badge          = (string)($item['badge'] ?? '');
-                $badge_class    = trim((string)($item['badge_class'] ?? ''));
-                $secondary      = (string)($item['secondary'] ?? '');
-                $secondary_icon = (string)($item['secondary_icon'] ?? '');
-                $secondary_href = (string)($item['secondary_href'] ?? '');
-                $secondary_class= trim((string)($item['secondary_class'] ?? ''));
+                $label           = (string)($item['label'] ?? $item['text'] ?? '');
+                $href            = (string)($item['href'] ?? '#!');
+                $class           = trim((string)($item['class'] ?? ''));
+                $active          = (bool)($item['active'] ?? false);
+                $disabled        = (bool)($item['disabled'] ?? false);
+                $avatar          = (string)($item['avatar'] ?? '');
+                $avatar_alt      = (string)($item['avatar_alt'] ?? '');
+                $body            = (string)($item['body'] ?? '');
+                $badge           = (string)($item['badge'] ?? '');
+                $badge_class     = trim((string)($item['badge_class'] ?? ''));
+                $secondary       = (string)($item['secondary'] ?? '');
+                $secondary_icon  = (string)($item['secondary_icon'] ?? '');
+                $secondary_href  = (string)($item['secondary_href'] ?? '');
+                $secondary_class = trim((string)($item['secondary_class'] ?? ''));
             } else {
-                $type           = '';
-                $label          = (string)$item;
-                $href           = is_string($key) ? (string)$key : '#!';
-                $class          = '';
-                $active         = false;
-                $disabled       = false;
-                $avatar         = '';
-                $avatar_alt     = '';
-                $body           = '';
-                $badge          = '';
-                $badge_class    = '';
-                $secondary      = '';
-                $secondary_icon = '';
-                $secondary_href = '';
-                $secondary_class= '';
+                $type            = '';
+                $label           = (string)$item;
+                $href            = is_string($key) ? (string)$key : '#!';
+                $class           = '';
+                $active          = false;
+                $disabled        = false;
+                $avatar          = '';
+                $avatar_alt      = '';
+                $body            = '';
+                $badge           = '';
+                $badge_class     = '';
+                $secondary       = '';
+                $secondary_icon  = '';
+                $secondary_href  = '';
+                $secondary_class = '';
             }
 
             if ($type === 'divider') {

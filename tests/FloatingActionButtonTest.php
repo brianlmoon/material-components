@@ -51,10 +51,10 @@ class FloatingActionButtonTest extends TestCase {
                         'icon'        => 'format_quote',
                     ],
                     [
-                        'href'        => '#publish',
-                        'color_class' => 'green',
-                        'icon'        => 'publish',
-                        'tooltip'     => 'Publish',
+                        'href'             => '#publish',
+                        'color_class'      => 'green',
+                        'icon'             => 'publish',
+                        'tooltip'          => 'Publish',
                         'tooltip_position' => 'left',
                     ],
                     [

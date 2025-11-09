@@ -34,10 +34,10 @@ class RadioTest extends TestCase {
     public function testMarkupOutputsMultipleRadiosWithGroupHelperText(): void {
         $radio = new Radio(
             [
-                'label'       => 'Choose a plan',
-                'helper_text' => 'Pick the option that fits best.',
+                'label'         => 'Choose a plan',
+                'helper_text'   => 'Pick the option that fits best.',
                 'wrapper_class' => 'plan-wrapper',
-                'options'     => [
+                'options'       => [
                     [
                         'label'       => 'Basic',
                         'value'       => 'basic',

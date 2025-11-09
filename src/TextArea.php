@@ -74,7 +74,7 @@ class TextArea extends ComponentAbstract {
      * {@inheritDoc}
      */
     public function setDefaults(): void {
-        $this->class .= " materialize-textarea";
+        $this->class .= ' materialize-textarea';
         if (empty($this->name)) {
             $this->name = $this->id;
         }

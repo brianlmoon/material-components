@@ -15,7 +15,7 @@ class FooterTest extends TestCase {
             [
                 'sections' => [
                     [
-                        'title' => 'Footer Content',
+                        'title'   => 'Footer Content',
                         'content' => 'Build anything.',
                     ],
                 ],
@@ -37,9 +37,9 @@ class FooterTest extends TestCase {
     public function testMarkupMatchesFixture(): void {
         $footer = new Footer(
             [
-                'container_class' => 'container',
+                'container_class'   => 'container',
                 'section_row_class' => 'row',
-                'sections' => [
+                'sections'          => [
                     [
                         'title'         => 'Footer Content',
                         'title_class'   => 'white-text',
@@ -66,7 +66,7 @@ class FooterTest extends TestCase {
                         ],
                     ],
                 ],
-                'copyright' => '© 2024 Moonspot',
+                'copyright'   => '© 2024 Moonspot',
                 'right_links' => [
                     [
                         'label' => 'More Links',

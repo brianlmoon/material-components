@@ -13,13 +13,13 @@ class NavbarTest extends TestCase {
     public function testSetDefaultsProvideRoleAndSidenavFallback(): void {
         $navbar = new Navbar(
             [
-                'brand_text' => 'Site',
+                'brand_text'  => 'Site',
                 'color_class' => 'blue lighten-1',
-                'menu_items' => [
+                'menu_items'  => [
                     [
-                        'label' => 'Home',
-                        'href'  => '/',
-                        'active'=> true,
+                        'label'  => 'Home',
+                        'href'   => '/',
+                        'active' => true,
                     ],
                 ],
             ],
@@ -54,9 +54,9 @@ class NavbarTest extends TestCase {
                 'menu_alignment'      => 'right hide-on-med-and-down',
                 'menu_items'          => [
                     [
-                        'label' => 'Components',
-                        'href'  => '/components',
-                        'active'=> true,
+                        'label'  => 'Components',
+                        'href'   => '/components',
+                        'active' => true,
                     ],
                     [
                         'label' => 'CSS',

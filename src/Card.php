@@ -52,7 +52,7 @@ class Card extends ComponentAbstract {
 
         foreach ($this->actions as $action) {
             if (!count($action) === 2 || empty($action['href']) || empty($action['text'])) {
-                throw new \LogicException("Invalid action", 1);
+                throw new \LogicException('Invalid action', 1);
             }
         }
     }
@@ -79,7 +79,7 @@ class Card extends ComponentAbstract {
                     } else {
                         echo $this->content;
                     }
-                    ?>
+        ?>
                 </div>
                 <?php if (!empty($this->actions)) { ?>
                     <div class="card-action">

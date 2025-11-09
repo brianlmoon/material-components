@@ -77,7 +77,9 @@ return [
         'PhanReadOnlyProtectedProperty',
         'PhanUnreferencedPublicProperty',
         'PhanUnreferencedClass',
-
+        'PhanReadOnlyPublicProperty',
+        'PhanWriteOnlyPublicProperty',
+        
     ],
 
     // A list of directories that should be parsed for class and

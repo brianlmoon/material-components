@@ -64,13 +64,13 @@ class Button extends ComponentAbstract {
     public function setDefaults(): void {
         $this->class = "btn waves-effect waves-light {$this->color} {$this->class}";
         if ($this->flat) {
-            $this->class .= " btn-flat";
+            $this->class .= ' btn-flat';
         }
         if ($this->size) {
             $this->class .= " btn-{$this->size}";
         }
         if ($this->floating) {
-            $this->class .= " btn-floating";
+            $this->class .= ' btn-floating';
         }
     }
 
@@ -83,6 +83,8 @@ class Button extends ComponentAbstract {
         } else {
             $tag = 'button';
         }
-        ?><<?=$tag?> <?php if ($this->href) {?>href="<?=$this->href?>"<?php } ?> <?=$this->attributes()?>><?php if ($this->icon) $this->icon->markup();?><?=htmlspecialchars($this->text)?></<?=$tag?>><?php
+        ?><<?=$tag?> <?php if ($this->href) {?>href="<?=$this->href?>"<?php } ?> <?=$this->attributes()?>><?php if ($this->icon) {
+            $this->icon->markup();
+        }?><?=htmlspecialchars($this->text)?></<?=$tag?>><?php
     }
 }
