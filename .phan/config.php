@@ -77,6 +77,8 @@ return [
         'PhanReadOnlyProtectedProperty',
         'PhanUnreferencedPublicProperty',
         'PhanUnreferencedClass',
+        'PhanReadOnlyPublicProperty',
+        'PhanWriteOnlyPublicProperty',
 
     ],
 

@@ -2,27 +2,65 @@
 
 namespace Moonspot\MaterialComponents;
 
-class Card extends \Moonspot\Component\ComponentAbstract {
+use Moonspot\Component\ComponentAbstract;
+
+/**
+ * Materialize card component featuring optional image, content, and actions.
+ */
+class Card extends ComponentAbstract {
 
     // settings
-    protected string                $title            = '';
-    protected string                $color            = 'black';
-    protected string                $background_color = 'white';
-    protected string                $image            = '';
-    protected string|array|\Closure $content          = '';
-    protected array                 $actions          = [];
+    /**
+     * Optional heading displayed inside the card content.
+     */
+    protected string $title = '';
 
-    public function setDefaults() {
+    /**
+     * Text color modifier (defaults to `black`).
+     */
+    protected string $color = 'black';
+
+    /**
+     * Background color class appended to the outer card.
+     */
+    protected string $background_color = 'white';
+
+    /**
+     * Optional image URL rendered in `.card-image`.
+     */
+    protected string $image = '';
+
+    /**
+     * Card content string, array (preformatted HTML), or closure.
+     *
+     * @var string|array|\Closure
+     */
+    protected string|array|\Closure $content = '';
+
+    /**
+     * List of actions, each requiring an `href` and `text`.
+     *
+     * @var array<int, array{href:string,text:string}>
+     */
+    protected array $actions = [];
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefaults(): void {
         $this->class .= " card {$this->background_color}";
 
         foreach ($this->actions as $action) {
             if (!count($action) === 2 || empty($action['href']) || empty($action['text'])) {
-                throw new \LogicException("Invalid action", 1);
+                throw new \LogicException('Invalid action', 1);
             }
         }
     }
 
-    public function markup() {
+    /**
+     * {@inheritDoc}
+     */
+    public function markup(): void {
         ?>
         <div <?=$this->attributes()?>>
             <?php if ($this->image) { ?>
@@ -41,7 +79,7 @@ class Card extends \Moonspot\Component\ComponentAbstract {
                     } else {
                         echo $this->content;
                     }
-                    ?>
+        ?>
                 </div>
                 <?php if (!empty($this->actions)) { ?>
                     <div class="card-action">
