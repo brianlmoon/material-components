@@ -16,22 +16,22 @@ class FloatingActionButton extends ComponentAbstract {
     /**
      * Controls the outer wrapper tag (defaults to div).
      */
-    public string $tag = 'div';
+    protected string $tag = 'div';
 
     /**
      * Indicates whether the FAB expands horizontally.
      */
-    public bool $horizontal = false;
+    protected bool $horizontal = false;
 
     /**
      * Indicates whether toolbar styling should be applied.
      */
-    public bool $toolbar = false;
+    protected bool $toolbar = false;
 
     /**
      * Optional ARIA label for the wrapper element.
      */
-    public string $aria_label = '';
+    protected string $aria_label = '';
 
     // settings
     /**
