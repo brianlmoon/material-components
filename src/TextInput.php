@@ -78,6 +78,11 @@ class TextInput extends ComponentAbstract {
      */
     public string $placeholder = '';
 
+    /**
+     * Set to off/on or list of fields
+     */
+    public string $autocomplete = '';
+
     // settings
     /**
      * Floating label text.
